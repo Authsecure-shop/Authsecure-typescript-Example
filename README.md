@@ -1,6 +1,4 @@
-Absolutely ✅
-Here’s your **fully translated and polished English version of the README**,
-ready to upload directly to GitHub — with perfect formatting and clarity 👇
+
 
 ---
 
@@ -381,4 +379,4 @@ Password: 12345
 
 ---
 
-Would you like me to generate a **ready-to-upload GitHub ZIP** for this project (including `README.md`, configs, and source code all pre-arranged)?
+
