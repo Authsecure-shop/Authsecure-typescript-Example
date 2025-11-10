@@ -1,25 +1,29 @@
----
-
-# ⚡ AuthSecure TypeScript Example
-
-> This is a complete **TypeScript (Node.js)** example that demonstrates
-> how to securely connect your application with the **AuthSecure API**.
-> It includes a fully functional Login, Register, and License system ✅
+बिलकुल ❤️
+यह रहा इसका पूरा **English README का हिंदी अनुवाद (GitHub-ready format)** —
+साफ-सुथरा और पब्लिक यूज़ के लिए तैयार 👇
 
 ---
 
-## 🚀 Features
+# ⚡ AuthSecure TypeScript Example (अंग्रेज़ी संस्करण का हिंदी रूप)
 
-✅ AuthSecure API Integration (Init / Login / Register / License Login)
-✅ Windows Hardware ID (HWID) Support (via PowerShell)
-✅ Secure HTTPS Requests (using Axios)
-✅ Clean Class-Based TypeScript Structure
-✅ Works on Windows, Linux, and macOS
-✅ Modern Node.js (ESM) Support
+> यह एक पूरा **TypeScript (Node.js)** उदाहरण है जो दिखाता है कि
+> आप अपने ऐप को **AuthSecure API** से सुरक्षित रूप से कैसे जोड़ सकते हैं।
+> इसमें Login, Register, और License Login पूरी तरह तैयार हैं ✅
 
 ---
 
-## 📁 Project Structure
+## 🚀 मुख्य विशेषताएं
+
+✅ AuthSecure API इंटीग्रेशन (Init / Login / Register / License Login)
+✅ Windows Hardware ID (HWID) सपोर्ट (PowerShell के माध्यम से)
+✅ सुरक्षित HTTPS रिक्वेस्ट्स (Axios का उपयोग करके)
+✅ क्लास-बेस्ड साफ-सुथरा TypeScript कोड
+✅ Windows, Linux, macOS पर काम करता है
+✅ आधुनिक Node.js (ESM) सपोर्ट
+
+---
+
+## 📁 प्रोजेक्ट स्ट्रक्चर
 
 ```
 authsecure_ts/
@@ -33,14 +37,14 @@ authsecure_ts/
 
 ---
 
-## ⚙️ Setup Guide (Step-by-Step)
+## ⚙️ सेटअप गाइड (Step-by-Step)
 
-### 🧱 Step 1 — Install Node.js
+### 🧱 Step 1 — Node.js इंस्टॉल करें
 
-If you don’t already have Node.js installed,
-download it from 👉 [https://nodejs.org/en/download](https://nodejs.org/en/download)
+अगर आपके सिस्टम में Node.js नहीं है,
+तो इसे यहाँ से डाउनलोड करें 👉 [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-Then verify the installation by running:
+फिर टर्मिनल में चेक करें:
 
 ```bash
 node -v
@@ -49,15 +53,15 @@ npm -v
 
 ---
 
-### 🧰 Step 2 — Create a New Project
+### 🧰 Step 2 — नया प्रोजेक्ट बनाएँ
 
-Create a new folder and navigate into it 👇
+अब नया फोल्डर बनाएं और उसमें जाएं 👇
 
 ```bash
 mkdir authsecure_ts && cd authsecure_ts
 ```
 
-Now run the following commands:
+अब यह कमांड्स चलाएँ:
 
 ```bash
 npm init -y
@@ -68,9 +72,9 @@ npx tsc --init
 
 ---
 
-### 📦 Step 3 — Update `package.json`
+### 📦 Step 3 — `package.json` अपडेट करें
 
-Edit your `package.json` like this 👇
+`package.json` को इस तरह एडिट करें 👇
 
 ```json
 {
@@ -93,9 +97,9 @@ Edit your `package.json` like this 👇
 
 ---
 
-### ⚙️ Step 4 — Configure `tsconfig.json`
+### ⚙️ Step 4 — `tsconfig.json` सेट करें
 
-Set up your `tsconfig.json` like this 👇
+`tsconfig.json` को इस तरह सेट करें 👇
 
 ```json
 {
@@ -115,11 +119,11 @@ Set up your `tsconfig.json` like this 👇
 
 ---
 
-## 💻 Source Files
+## 💻 कोड फाइल्स
 
 ### 🧩 `src/authsecure.ts`
 
-This is the main class that handles communication with the AuthSecure API 👇
+यह मुख्य क्लास है जो AuthSecure API से कनेक्शन बनाती है 👇
 
 ```ts
 import axios from "axios";
@@ -247,12 +251,12 @@ export class AuthSecure {
   }
 
   private printUserInfo(info: any) {
-    console.log("\n👤 User Info:");
-    console.log(" Username:", info.username);
+    console.log("\n👤 यूज़र जानकारी:");
+    console.log(" यूज़रनेम:", info.username);
     console.log(" HWID:", info.hwid);
     console.log(" IP:", info.ip);
     if (info.subscriptions) {
-      console.log(" Subscriptions:");
+      console.log(" सब्सक्रिप्शन:");
       info.subscriptions.forEach((sub: any) =>
         console.log(`  - ${sub.subscription} | Expires: ${sub.expiry}`)
       );
@@ -265,7 +269,7 @@ export class AuthSecure {
 
 ### 🧩 `src/main.ts`
 
-This file provides a simple CLI interface for the user 👇
+यह फाइल CLI (कमांड लाइन) के जरिए यूज़र इंटरैक्शन के लिए है 👇
 
 ```ts
 import readline from "readline";
@@ -287,11 +291,11 @@ const client = new AuthSecure({
   await client.Init();
 
   console.log("\n[1] Login\n[2] Register\n[3] License Login\n[4] Exit");
-  rl.question("Choose option: ", async (choice) => {
+  rl.question("एक विकल्प चुनें: ", async (choice) => {
     switch (choice) {
       case "1":
-        rl.question("Username: ", (username) => {
-          rl.question("Password: ", async (password) => {
+        rl.question("यूज़रनेम: ", (username) => {
+          rl.question("पासवर्ड: ", async (password) => {
             await client.Login(username.trim(), password.trim());
             rl.close();
           });
@@ -299,9 +303,9 @@ const client = new AuthSecure({
         break;
 
       case "2":
-        rl.question("Username: ", (username) => {
-          rl.question("Password: ", (password) => {
-            rl.question("License: ", async (license) => {
+        rl.question("यूज़रनेम: ", (username) => {
+          rl.question("पासवर्ड: ", (password) => {
+            rl.question("लाइसेंस: ", async (license) => {
               await client.Register(username.trim(), password.trim(), license.trim());
               rl.close();
             });
@@ -310,7 +314,7 @@ const client = new AuthSecure({
         break;
 
       case "3":
-        rl.question("License: ", async (license) => {
+        rl.question("लाइसेंस: ", async (license) => {
           await client.License(license.trim());
           rl.close();
         });
@@ -326,7 +330,7 @@ const client = new AuthSecure({
 
 ---
 
-## 🧮 Run Instructions
+## 🧮 प्रोजेक्ट रन करने का तरीका
 
 ```bash
 npm run build
@@ -345,35 +349,37 @@ Connecting...
 [2] Register
 [3] License Login
 [4] Exit
-Choose option: 1
-Username: lufy
-Password: 12345
+एक विकल्प चुनें: 1
+यूज़रनेम: lufy
+पासवर्ड: 12345
 ✅ Logged in!
 
-👤 User Info:
- Username: lufy
+👤 यूज़र जानकारी:
+ यूज़रनेम: lufy
  HWID: S-1-5-21-3116590451-4259102588-3214189088-1001
  IP: 2a09:bac5:3c0b:1a96::2a6:65
- Subscriptions:
+ सब्सक्रिप्शन:
   - default | Expires: 1762788300
 ```
 
 ---
 
-## 🧠 Key Highlights
+## 🧠 महत्वपूर्ण बातें
 
-| Feature         | Description                            |
-| --------------- | -------------------------------------- |
-| 🔒 HTTPS API    | Secure requests using Axios            |
-| 💻 HWID         | Generated from Windows User SID        |
-| 🧱 TypeScript   | Clean, type-safe, and maintainable     |
-| 🔧 Ready to Use | Can be integrated into any app or game |
+| विषय            | विवरण                                             |
+| --------------- | ------------------------------------------------- |
+| 🔒 HTTPS API    | Axios से सुरक्षित रिक्वेस्ट                       |
+| 💻 HWID         | Windows User SID से HWID जेनरेट होता है           |
+| 🧱 TypeScript   | साफ, Type-safe और Maintainable                    |
+| 🔧 Ready to Use | किसी भी App या Game में इंटीग्रेट किया जा सकता है |
 
 ---
 
-## 🪪 License
+## 🪪 लाइसेंस
 
 **MIT License © 2025 — Created with ❤️ by Lufy**
 
 ---
 
+क्या चाहो तो मैं इसका **ZIP Template (GitHub-ready)** बना दूँ
+जिसमें यह पूरा कोड + README + सेटअप पहले से होगा (बस `npm start` चलाना होगा)?
